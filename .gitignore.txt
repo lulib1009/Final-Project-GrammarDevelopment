@@ -1,0 +1,2 @@
+#exclude folders with temporart files comment by mark
+grammar7.lfg.fileindexdir/*
