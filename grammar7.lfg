@@ -335,6 +335,10 @@ sleep 	  V * @(INTRANS sleep)
 slept 	  V * @(INTRANS sleep)
 	      @VPAST. 
 
+hug 	  V * @(TRANS sleep)
+              @VPRES
+              @BARE-AGR.
+
 waited 	  V * { @(INTRANS wait) | 
 		@(INTRANS-OBL wait) 
 		"this is the non-semantic OBL wait on a customer use"
