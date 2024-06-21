@@ -272,6 +272,8 @@ hate	  V-S XLE @(TRANS %stem).  "using the morphological analyzer"
 
 eat       V-S XLE @(OPT-TRANS %stem). 
 
+play 	  V-S XLE @(OPT-TRANS %stem). 
+
 implement V * @(TRANS see)
 	      @VPRES
 	      @BARE-AGR. 
