@@ -21,5 +21,9 @@ The grammar is divided into modules which are 'RULES', 'MORPHOLOGY', 'TEMPLATES'
 
 The grammar created is a rule-based grammar, where specific and customized rules are created according to the structure of certain sentences in Spanish. Each rule is designed to handle different phenomena in the chosen language such as subject-verb agreement, yes-no questions, imperatives etc. For instance the rule "Simp --> e:  {(^ SUBJ PRED) = 'pro' (^ SUBJ PERS) = 2 | (^ SUBJ PRED) = 'pro'(^ SUBJ PERS) = 1};VP." provides that the subject's predicate must be a pronoun, either second or first person, and a verb phrase must follow the subject in order to an imperative sentence to be parsed.
 
+The use of OT Marks:
+
+The use of OT Marks is so important for the grammar to be able to rank and specify th differences amoong the competing syntactic structures. OT marks apply to specific structures and are used to indicate what is preferred or not preferred in those structures. For example, the OT mark '@(OT-MARK Punct)' is applied since punctuation has the potential to affect syntactic structure, semantics, prosody and, of course, meaning, it is important to specify what is preferred in terms of sytantic structure, as mentioned earlier, using OT marks. By adding a punctuation constraint to the XLE, it shows how punctuation is to be handled and ensures that it is compatible with the grammatical rules being encoded.
+
 
 # Files
