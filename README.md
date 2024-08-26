@@ -10,7 +10,8 @@
  4. Dilect differences: Argentinian dialect vs. Castillian Spanish: differences between in verbs conjugation and pronoun usage.
  5. Subordinate clauses with 'que' .
  6. Negation with 'no'
- 7. Imperatives maybe????????
+ 7. Imperatives: including 1st person plural imperatives.
+ 8. Yes/no questions: in argentinian dialect and castillian spanish
 
 # Implementation approach/design
 
