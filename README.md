@@ -3,6 +3,7 @@
 # Overview
 
 
+
 # Why we choose these phenomena
  1. Verbal complexes: verbs have to agree with the noun in number and gender. Also implemented present and past.
  2. Determiner/Adjective/noun agreement in gender and number, and subject/verb agreement.
@@ -12,6 +13,10 @@
  6. Negation with 'no'
  7. Imperatives: including 1st person plural imperatives.
  8. Yes/no questions: in argentinian dialect and castillian spanish
+
+Clarification: In Spanish all questions and exclamatory senteces use their respective punctuation marks at beggining of the sentences and at the end. However, **the XLE or lfg or i dont what it is exactly** does not have the opening question mark **¿** and the opening exclamation mark **¡**. Therefore, we decided to parse the senteces without the questions mark and write this disclamer announcing that they actually exist and should be there in the senteces, we even put it in the grammar in the punctuation section even though they are not used. 
+
+More so, several words in Spanish hace an orthographic accent, but the XLE does not recognize them properly in some occassions. So, what we decided to do is to keep them in the cases in which the XLE recognized them and to take them out when they were causing trouble. Nevertheless, there are several verbs in Spanish that need that accent in order to be differentiated in mood and/or tense. For example: *Comé* and *Confiá* are verbs that need the final accent in order to be in imperative mood in the presente tende, otherwise *Come* and *Confia* would still be in the present tense, but the mood changes into indicative. A second example is *Corrió*, in which luckily the accent is recognized in the XLE, that is the past form of the verb *correr* in the 3rd person singular, and this verbs form needs the accent to be orthographically correct becuase *corrio* without the accent does not exist. Finally, the accents in *Tenés* and *Querés* is necessary in the Argentinian dialect's way of conjugating the verbs in the 2nd person singular, just like the accent in *Tenéis* for the 2nd person plural in Castillian Spanish. (In case, of receiving an error messgae when parsing these senteces take into account that the mistake could be the accen recognition.)
 
 # Implementation approach/design
 
