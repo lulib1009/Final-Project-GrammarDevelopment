@@ -5,7 +5,7 @@
 
 
 # Why we choose these phenomena
- 1. Verbal complexes: verbs have to agree with the noun in number and gender. Also implemented present and past.
+ 1. Verbal complexes: Verbs have to agree with the noun in number and gender. Also implemented present and past. Verbs are very complicated in Spanish, as we mentioned, they have different conjugations for tenses, mood, gender, and number. This complexity was one of the reasons that we chose different verbs with different sentences. The aim was to make XLE recognize the difference and to be able to parse the sentences with the correct verb form. For instance, the verb 'Vamos' is the third person plural form for the verb 'Let's go', and in most languages, the base of the verb is usually the same but you add a suffix to conjugate it in terms of number. However, in Spanish verbs undergo a very intense inflection.
  2. Determiner/Adjective/noun agreement in gender and number, and subject/verb agreement.
  3. internal NP structure. Different positioning of the adjectives and adverbs since Spanish is a rather flexible language in terms of word order.
  4. Dilect differences: Argentinian dialect vs. Castillian Spanish: differences between in verbs conjugation and pronoun usage.
