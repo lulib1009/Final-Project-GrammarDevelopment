@@ -6,13 +6,13 @@
 
 # Why we choose these phenomena
  1. Verbal complexes: Verbs have to agree with the noun in number and gender. Also implemented present and past. Verbs are very complicated in Spanish, as we mentioned, they have different conjugations for tenses, mood, gender, and number. This complexity was one of the reasons that we chose different verbs with different sentences. The aim was to make XLE recognize the difference and to be able to parse the sentences with the correct verb form. For instance, the verb 'Vamos' is the third person plural form for the verb 'Let's go', and in most languages, the base of the verb is usually the same but you add a suffix to conjugate it in terms of number. However, in Spanish verbs undergo a very intense inflection.
- 2. Determiner/Adjective/noun agreement in gender and number, and subject/verb agreement. 
- 3. internal NP structure. Different positioning of the adjectives and adverbs since Spanish is a rather flexible language in terms of word order.
- 4. Dilect differences: Argentinian dialect vs. Castillian Spanish: differences between in verbs conjugation and pronoun usage.
- 5. Subordinate clauses with 'que'.
- 6. Negation with 'no'
- 7. Imperatives: When we come to the Imperative, we encounter an important feature that distinguishes Spanish from other languages. In most languages, the imperative is usually used in the second person singular or second person plural. However, Spanish also uses the imperative in the third person plural, which is interesting. As in the case of the verb 'Hagamos'. The verb is conjugated in the third person plural and used in the imperative. For this intriguing reason, we wanted to include imperatives in our project.
- 8. Yes/no questions: in Argentinian dialect and Castillian Spanish
+ 2. Determiner/Adjective/noun agreement in gender and number, and subject/verb agreement: Spanish grammar requires determiners, adjectives and nouns agree in both gender and number. In terms of gender agreement, we can say that determiners and adjectives must be compatible with the nouns that they modify. For example, we have 'los ninos' and 'las jirafas', 'los' and 'las' are the determiners and they match with the gender of the nouns which respectively are feminine(giraffes) and masculine(boys). If they don't match with the noun, the sentence becomes unparsable.
+ 4. internal NP structure. Different positioning of the adjectives and adverbs since Spanish is a rather flexible language in terms of word order.
+ 5. Dilect differences: Argentinian dialect vs. Castillian Spanish: differences between in verbs conjugation and pronoun usage.
+ 6. Subordinate clauses with 'que'.
+ 7. Negation with 'no'
+ 8. Imperatives: When we come to the Imperative, we encounter an important feature that distinguishes Spanish from other languages. In most languages, the imperative is usually used in the second person singular or second person plural. However, Spanish also uses the imperative in the third person plural, which is interesting. As in the case of the verb 'Hagamos'. The verb is conjugated in the third person plural and used in the imperative. For this intriguing reason, we wanted to include imperatives in our project.
+ 9. Yes/no questions: in Argentinian dialect and Castillian Spanish
 
 Clarification: In Spanish all questions and exclamatory senteces use their respective punctuation marks at beggining of the sentences and at the end. However, **the XLE or lfg or i dont what it is exactly** does not have the opening question mark **¿** and the opening exclamation mark **¡**. Therefore, we decided to parse the senteces without the questions mark and write this disclamer announcing that they actually exist and should be there in the senteces, we even put it in the grammar in the punctuation section even though they are not used. 
 
