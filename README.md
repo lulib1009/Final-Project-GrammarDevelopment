@@ -1,5 +1,5 @@
-   # Grammar Development Final Project
-   ### Spanish Grammar 
+   # Spanish Grammar 
+   ### Grammar Development Final Project
    ### SoSe 2024 
    ### Nurten Atıcı , Buket Sak, Ludmila Bajuk
 
