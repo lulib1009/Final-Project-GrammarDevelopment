@@ -1,7 +1,7 @@
    # Grammar Development Final Project
    ### Spanish Grammar 
    ### SoSe 2024 
-   ### Nurten Atc , Buket Sak, Ludmila Bajuk
+   ### Nurten Atıcı , Buket Sak, Ludmila Bajuk
 
 # Overview
 When creating a grammar for the XLE parser, it was necessary to take into account a number of linguistic complications that are specific to the Spanish language. In order to ensure accurate parsing and the creation of various sentence kinds that accurately reflect the subtleties of Spanish, this endeavor required the precise implementation of rules and structures. The study concentrated on a number of significant linguistic phenomena, each of which presented particular difficulties and called for specially designed XLE framework solutions.
@@ -52,5 +52,5 @@ The use of OT Marks is so important for the grammar to be able to rank and speci
 | Team Member           | Contributions                                             |
 |-----------------------|-----------------------------------------------------------|
 | Buket Sak             | Imperatives, Subordinate Sentences, Yes/no questions      |                                                       
-| Nurten Atc            | Topic Senteces, Agreement, Internal VP and NP structure   |
+| Nurten Atıcı            | Topic Sentences, Agreement, Internal VP and NP structure   |
 | Ludmila Bajuk         | Verbal Complexes, Negation, Dialect Differences           |
