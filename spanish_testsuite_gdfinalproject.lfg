@@ -1,0 +1,190 @@
+#TESTSUITE SPANISH
+
+#The English translation for each sentece in written above the parsable and unparsable senteces. 
+
+# Sentences for adjective, determiner, noun agreement in gender and number agreement. Internal NP structure different position for adverbs and adjectives. 
+
+# The happy children play in the park.
+
+Los niños contentos juegan en el parque. 
+
+# Some girls happily learn Spanish at the school. 
+ 
+Unas niñas aprenden español alegremente en el colegio.
+
+# Giraffes are very tall animals. 
+
+Las jirafas son animales muy altos.
+
+# Pedro wants a delicious cookie. 
+
+Pedro quiere un rico alfajor. 
+
+
+# Senteces in Argentinian dialect and Castillian Spanish dialect. 
+# 'vos' is the Argentinian determiner for 'tu', and 'sos'the Argentinian conjugation for 
+# the verb 'ser' which in Castillian Spanish would be 'eres'.
+
+# You are the best student from the school
+
+Vos sos la mejor alumna del colegio.
+
+# You are not the best student from the school. (negation added)
+
+Tu no eres la mejor alumna del colegio.
+
+# You have a purple t-shirt.
+
+Ustedes tienen una remera violeta.
+
+Vosotros tenéis una camiseta morada. 
+
+
+# Yes/no questions in argentinian dialect because the verb 'tener' is conjugated for the
+# pronoun 'vos'(argentinian), in Castillian Spanish from spain it would be 'tienes'.
+
+# Have you got a yellow footbal t-shirt?
+
+¿Tenés una remera amarilla de fútbol?
+
+#Let's go to the park?
+
+¿Vamos al parque?
+
+#Do you want a cookie?
+
+¿Querés un alfajor?
+
+
+# Subordinate sentences with the complementizer 'que' (that or which).
+
+#Julieta said that the girls learn at the school.
+
+Julieta dijo que las niñas aprenden en el colegio.
+
+# Some boys asserted that giraffes run freely.
+
+Unos niños afirmaron que las jirafas corren libremente.
+
+
+# Topic sentecences.
+
+# A cookie, Pedro wants.
+
+Un alfajor, Pedro quiere.
+
+# A race, Julieta ran.
+
+Una carrera, Julieta corrió.
+
+
+# Negation with 'no'
+
+#Pedro does not want a cookie.
+
+Pedro no quiere un alfajor. 
+
+#I do not speak Spanish.
+
+Yo no hablo español.
+
+
+# Imperatives including the 1st person plural which is not common in every language in the 
+# imperative mood. 
+
+#Eat the food! 
+
+¡Comé la comida!
+
+# Trust me! Imperative with 'en' non-sem.
+
+¡Confia en mi! 
+
+# Trust the student!
+
+¡Confia en la alumna! 
+
+# Let's do a gathering this afternook! Imperative with 1st person plural.
+
+¡Hagamos una juntada esta tarde! 
+
+
+# UNPARSABLE SENTENCES 
+
+# non-agreement between subject (noun) and adjective. Also, in this case the sentece
+# would be unparsable because of the position of the ajective, since even though, that
+# position after de verb is possible, it is not possible in this grammar because the rules 
+# do not allow it. 
+
+# The boys play happy at the school.
+
+Los niños juegan contentas en el colegio.  
+
+#no adjective/noun agreement gender
+
+# Giraffes are tall.
+
+Las jirafas son altos.
+
+#no determiner/noun number agreement
+
+# Some giraffes run free.
+
+Una jirafas corren libres. 
+
+#wrong determiner and verbs conjugation in argentinian dialect.
+
+# You have a gathering this afternoon.
+
+Vos tienen una juntada esta tarde.
+
+#wrong Word order in subordinate clasues, the complementizer goes before the subordinate 
+# verb
+
+# Pedro said the girls that want a cookie.
+
+Pedro dijo las niñas que quieren un alfajor.
+
+# Imperative have an empty subject position
+
+# You eat the food!
+
+¡Tú come la comida!
+
+# verbal tense agreement
+
+# We era at the school.
+
+Nosotros están en el colegio.
+
+# Negation word order, even though this word order in Spanish is possible, however, it is 
+# not possible in this grammar since the rules do not allow this.
+
+#No you are free.
+
+No son libres.
+
+
+# Yes/no questions additional verb complextion.
+
+#Do you want to go to the park?
+
+¿Querés ir al parque?
+
+# Wrong word order in yes/no questions, that is allowed in Spanish, but not in this grammar.
+
+¿Al parque, querés ir?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
