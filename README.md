@@ -1,11 +1,14 @@
-# grammar_dev
+   # Grammar Development Final Project
+   ## Spanish Grammar 
+   ### SoSe 2024 
+   ## Nurten Atc , Buket Sak, Ludmila Bajuk
 
 # Overview
 
 
 
 # Why we choose these phenomena
- 1. Verbal complexes: Verbs have to agree with the noun in number and gender. Also implemented present and past. Verbs are very complicated in Spanish, as we mentioned, they have different conjugations for tenses, mood, gender, and number. This complexity was one of the reasons that we chose different verbs with different sentences. The aim was to make XLE recognize the difference and to be able to parse the sentences with the correct verb form. For instance, the verb 'Vamos' is the third person plural form for the verb 'Let's go', and in most languages, the base of the verb is usually the same but you add a suffix to conjugate it in terms of number. However, in Spanish verbs undergo a very intense inflection.
+ 1. Verbal complexes: Verbs have to agree with the noun in number and gender. We implemented Present Simple and Past Perfect (*Pasado Perfecto*, which is not like Past Perfect in English, it is more like Simple Past) in Spanish, even though there are more than 15 verb tenses. Verbs are very complicated in Spanish, as we mentioned, they have different conjugations for tenses, mood, and number. This complexity was one of the reasons that we chose different verbs with different sentences. The aim was to make XLE recognize the difference and to be able to parse the sentences with the correct verb form in every way. For instance, the verb *Vamos* is the first person plural form for the verb 'Let's go', and in most languages, the base of the verb (*ir*) is usually the same but you add a suffix to conjugate it in terms of number. However, in Spanish verbs undergo a very intense inflection. Verbs also change a greatly when their mood change
  2. Determiner/Adjective/noun agreement in gender and number, and subject/verb agreement: Spanish grammar requires determiners, adjectives and nouns agree in both gender and number. In terms of gender agreement, we can say that determiners and adjectives must be compatible with the nouns that they modify. For example, we have 'los ninos' and 'las jirafas', 'los' and 'las' are the determiners and they match with the gender of the nouns which respectively are feminine(giraffes) and masculine(boys). If they don't match with the noun, the sentence becomes unparsable.
  3. internal NP structure. Different positioning of the adjectives and adverbs since Spanish is a rather flexible language in terms of word order. In Spanish, there are lots of positions that adverbs and adjectives can be put thanks to its flexible word order structure. For instance adjectives can be positioned before or after the noun that they modify, which is not the case in most languages. As an example, whereas the adjective 'rico' comes before the noun 'alfajor' in the sentence "Pedro no quiere un alfajor.", it(morada) comes after the noun 'camiseta' in the sentence "Vosotros tenéis una camiseta morada.".
  4. Dilect differences: Argentinian dialect vs. Castillian Spanish: differences between in verbs conjugation and pronoun usage.
