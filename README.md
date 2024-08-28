@@ -1,7 +1,7 @@
    # Grammar Development Final Project
-   ## Spanish Grammar 
+   ### Spanish Grammar 
    ### SoSe 2024 
-   ## Nurten Atc , Buket Sak, Ludmila Bajuk
+   ### Nurten Atc , Buket Sak, Ludmila Bajuk
 
 # Overview
 
