@@ -1,0 +1,624 @@
+  "set-character-encoding spanish3.lfg utf-8"  
+
+  DEMO SPANISH  CONFIG (1.0)
+  ROOTCAT   ROOT.
+  FILES  . 
+  LEXENTRIES   (DEMO SPANISH).
+  RULES   (DEMO SPANISH).
+  TEMPLATES   (DEMO SPANISH).
+  MORPHOLOGY (DEMO SPANISH).
+  FEATURES. 
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ-?+ OBL OBL-?+ COMP XCOMP.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  NONDISTRIBUTIVES    NUM PERS.
+  EPSILON   e.
+  OPTIMALITYORDER NOGOOD PPadj +PPattach +sg-imp +sg-int.
+  GENOPTIMALITYORDER GenBadPunct NOGOOD +Punct.
+
+ ----
+
+DEMO SPANISH MORPHOLOGY (1.0)
+
+TOKENIZE:
+P!basic-parse-tok.fst G!default-gen-tokenizer.fst
+
+----
+
+DEMO SPANISH   RULES (1.0)
+
+   
+   ROOT --> { { S | Stop }
+   	    PERIOD: @(OT-MARK Punct)
+	    |
+	    Simp
+	    EXCL:  @(OT-MARK Punct)
+	    |
+	    Sint
+	    INT:  @(OT-MARK Punct)
+	    }.
+
+	
+
+   S --> NP: (^ SUBJ)=! "IT CAN ALSO BE WITHOUT THE SUBJECT" 
+	     (! CASE)=nom;
+ 	 ADVP*
+ 	 (COMMA)
+ 	 VP: (^ TNS-ASP TENSE). 
+ 
+
+   Simp -->
+ 	  e: 
+	     {(^ SUBJ PRED) = 'pro'
+	     (^ SUBJ PERS) = 2 |
+	     (^ SUBJ PRED) = 'pro'
+	     (^ SUBJ PERS) = 1};
+ 	  VP.
+ 	 
+
+   Sint --> e: (^ SUBJ PRED)='pro';
+	       
+	       VP.
+	       
+
+   Stop --> NP: (^ TOPIC) = !
+		(^ {XCOMP|COMP}* {OBJ|OBJ2}) = !;
+ 	  COMMA
+ 	  S.
+ 	   
+		    
+    VP --> (NEG)
+	   (AUX) "auxiliary introduced for passive"
+ 	   (ADVP)
+ 	   V: ^=!; 
+ 	   (NP: (^OBJ) =! "direct object"
+	        (! CASE)=acc)
+ 	   (NP: (^ OBJ2)= !) "secondary object"
+	   (ADVP)	
+ 	   PP*: { ! $ (^ ADJUNCT) "PPs can be all types of adjuncts"
+		  @(OT-MARK PPadj) "disprefer adjunct PPs" 
+	        | (^ OBL) = ! "or a a general oblique"
+	        };
+	   (CP: (^ COMP) = !)
+ 	   .
+ 
+   CP --> C S.
+
+   NP --> { (DET: ^=! 
+		@ADJ-AGR)
+		AP*: ! $(^ ADJUNCT)
+		@ADJ-AGR;
+ 	  	N
+		(ADVP)
+ 		AP*: ! $(^ ADJUNCT)
+		@ADJ-AGR;
+	        PP*: ! $ (^ ADJUNCT)  "PPs modifying NPs" 
+	            "(! PTYPE) =c sem"   "have to be semantic" 
+	            @(OT-MARK PPattach) "prefer PPs attached to NPs (do not want all the possibilies but to NPs atttachment"
+	         | PRON }.
+
+
+   PP --> { P: ^=! 
+	       (^ PTYPE)=c sem; "for adjuncts" 
+ 	    NP: (^ OBJ)=! 
+ 	  | P: ^=! 
+	       (^ PTYPE)=c nosem; "for oblique arguments"
+ 	    NP: ^=!}.
+
+   ADVP --> { ADV*: ! $ (^ADJUNCT);
+ 	       | ADV (COMMA) ADV}.
+
+   AP --> (ADV*: ! $ (^ ADJUNCT))
+ 	  ADJ
+ 	  (COMMA).
+
+
+----
+DEMO SPANISH   TEMPLATES (1.0)
+   
+   ADJ(_P T) = (^ PRED) = '_P'
+	  (^ ATYPE) = attributive
+	  (^ DEGREE) = positive. 
+
+
+   ADJ-AGR = (^ NUM) = (! NUM)   "for adjective agreement" 
+	  (^ GEND) = (! GEND).
+   
+   NOUN-AGR = (^ NUM) = (! NUM)   "for noun agreement" 
+	  (^ GEND) = (! GEND).
+
+
+   GF = { (^ SUBJ) = ! 
+	| (^ OBJ) = ! 
+	| (^ OBJ-TH) = !}.
+
+   GF-CASE(GF C) = (^GF CASE) = C. 
+
+   P-GF = { ! $ (^ ADJUNCT)    "either adjunct or obl for PPs" 
+	   (! PTYPE) =c sem 
+	  | (^ OBL) = !
+            (^ OBL PTYPE) =c nosem}.
+	    
+   PREP(P) = "template for most prepositions"
+	  { (^ PRED) = 'P<(^OBJ)>' 
+	    (^ PTYPE) = sem
+	  | (^ PTYPE) = nosem
+	    (^ PFORM) = P}.
+
+   PCASE(P) = (^ PCASE) = P. 
+
+   PTYPE(P) = (^ PTYPE) = P. 
+
+   PSEM(P)  = (^ PSEM) = {P}. 
+
+   NTYPE = (^ NTYPE NSEM COMMON) = count
+	   (^ NTYPE NSYN) = common. 
+
+   NTYPE-PROPER = (^ NTYPE NSEM PROPER PROPER-TYPE) = name
+	   (^ NTYPE NSYN) = proper. 
+
+   PRED(_P) = (^ PRED) = '_P'.  
+
+   COUNT-NOUN(_P G N) = "count nouns"
+	  (^ PRED) = '_P'
+	  @NTYPE
+	  (^ GEND) = G
+	  (^ NUM) = N
+	  (^ PERS) = 3. 	  
+
+
+
+   NOUN(_P) = "core noun"
+	  @(PRED _P) "supplies PRED value"
+	  @(PERS 3).
+
+
+   PROPN(P G) = (^PRED)='P' "proper names"
+	  (^ GEND) = G
+	  @NTYPE-PROPER
+	  (^ NUM)=sg
+	  (^ PERS)=3.
+
+   SUBJ-AGR(P N) = (^ SUBJ NUM)=N  "for subject agreement"
+	  (^ SUBJ PERS)=P. 
+
+  SUBJ-AGR-N(N) = (^ SUBJ NUM)=N.  "for subject number agreement"
+
+  SUBJ-AGR-P(P) = (^ SUBJ PERS)=P.  "for subject pers agreement"
+
+   
+   TENSE(T) = (^ TNS-ASP TENSE)= T. 
+
+   MOOD(M) = (^ TNS-ASP MOOD) = M. 
+
+   GEND(G) = (^ GEND) = G. 
+
+   NUM(N) = (^ NUM) = N. 
+
+   PERS(P) = (^ PERS) = P. 
+
+   PRON(P Z   N T) = (^ PRED) = 'P'
+	  (^ NUM) = N
+	  (^ PERS) = Z
+	  (^ PRON-TYPE) = T
+	  (^ NTYPE) = pron.
+
+   POSS-PRON(P N Z) = (^POSS PRED) = 'P'    
+                   (^POSS NUM) = N
+	           (^POSS PERS) = Z
+	           (^POSS PRON-TYPE) = poss
+	            (^POSS NTYPE) = pron.
+
+  INT-PRON(P) = (^ PRED) = 'P'
+		(^ NUM) = N
+	  	(^ PRON-TYPE) = int
+	  	(^ NTYPE) = pron.
+
+
+   VFORM(F) = (^ VFORM) = F. 
+
+
+   INTRANS(P) = (^ PRED)='P<(^ SUBJ)>'.
+
+   OT-MARK(_mark) = "assigns an OT mark, from common templates"
+       _mark $ o::*.
+
+   TRANS(P) =  (^ PRED)='P<(^ SUBJ)(^ OBJ)>'. 
+
+
+   TRANS-OBL(P) = (^ PRED)='P<(^ SUBJ)(^ OBL)>'.
+	              
+
+   DITRANS(P) = (^ PRED)='P<(^ SUBJ)(^ OBJ)(^ OBJ-TH)>'.
+            
+
+   DITRANS-ACC-ACC(P) = (^ PRED)='P<(^ SUBJ)(^ OBJ)(^ OBJ-TH)>'.
+              
+
+   OPT-TRANS(P) = { @(INTRANS P)|@(TRANS P)}. 
+
+
+   SPEC(_P T) = (^  SPEC DET PRED) = '_P'
+	  (^ SPEC DET DET-TYPE) = T.
+
+---- 
+
+DEMO SPANISH   LEXICON (1.0)
+
+"names"
+
+Julieta	  N * @(PROPN Julieta fem).
+
+
+Pedro     N * @(PROPN Pedro masc).
+
+
+"pronouns"
+
+Vos	 PRON * @(PRON you 2 sg pers). 
+
+Tu	 PRON * @(PRON you 2 sg pers). 
+
+Ustedes   PRON * @(PRON you 2 pl pers). 
+
+Vosotros  PRON * @(PRON you 2 pl pers). "in spain not argentina"
+
+Yo   PRON * @(PRON I 1 sg pers). 
+
+mi   PRON * @(PRON I 1 sg pers).
+
+Nosotros   PRON * @(PRON us 1 pl pers).
+
+
+"count nouns"
+
+tarde N * @(COUNT-NOUN afternoon fem sg).
+
+juntada N * @(COUNT-NOUN gathering fem sg).
+
+jirafas N * @(COUNT-NOUN giraffes fem pl).
+
+animales N * @(COUNT-NOUN animals masc pl).
+
+remera N * @(COUNT-NOUN t-shirt fem sg).
+
+alfajor N * @(COUNT-NOUN cookie masc sg). 
+
+juguetes N * @(COUNT-NOUN toys masc pl).
+
+niños  N * @(COUNT-NOUN boys masc pl). 
+
+parque N * @(COUNT-NOUN park masc sg). 
+
+alumna N * @(COUNT-NOUN student fem sg). 
+
+colegio N * @(COUNT-NOUN school masc sg). 
+
+fútbol  N * @(COUNT-NOUN footbal masc sg).
+
+niñas  N * @(COUNT-NOUN girls fem pl).
+
+camiseta N * @(COUNT-NOUN t-shirt fem sg).
+
+comida   N * @(COUNT-NOUN food fem sg).
+
+español   N * @(COUNT-NOUN spanish masc sg).
+
+carrera N * @(COUNT-NOUN race fem sg).
+
+
+"verbs"
+
+están	V * @(INTRANS are) 
+	    @(MOOD indicative)
+             (^ VTYPE) = main
+	    @(SUBJ-AGR 3 pl)
+	    @(TENSE pres). 
+
+juegan 	  V * @(OPT-TRANS play) 
+	      @(MOOD indicative)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+	      @(TENSE pres).
+ 
+sos	V * @(OPT-TRANS are)   "argentinian dialect"
+	    @(MOOD indicative)
+             (^ VTYPE) = main
+	    @(SUBJ-AGR 2 sg)
+	    @(TENSE pres).
+
+eres	V * @(OPT-TRANS are)  
+	    @(MOOD indicative)
+             (^ VTYPE) = main
+	    @(SUBJ-AGR 2 sg)
+	    @(TENSE pres).
+	    
+sean 	  V * @(OPT-TRANS be) "subjunctive form"
+	      @(MOOD subjunctive)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+	      @(TENSE pres).
+
+Tenés 	  V * @(TRANS have)		"argentinian dialect"
+	      @(MOOD indicative) 
+              (^ VTYPE) = main
+              @(SUBJ-AGR 2 sg)
+              @(TENSE pres). 
+
+dijo 	  V * { (^ PRED) ='said<(^ SUBJ)(^ COMP)>'
+	      | @(TRANS say) }
+	      @(MOOD indicative)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 sg)
+	      @(TENSE past). 
+
+afirmaron   V * { (^ PRED) ='confirmed<(^ SUBJ)(^ COMP)>'
+	      | @(TRANS confirmed) }
+	      @(MOOD indicative)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+	      @(TENSE past). 
+
+aprenden  V * @(OPT-TRANS learn) 
+	      @(MOOD indicative)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+	      @(TENSE pres). 
+
+tienen	   V * @(TRANS have)
+	      @(MOOD indicative) 
+              (^ VTYPE) = main
+              { @(SUBJ-AGR 2 pl) | @(SUBJ-AGR 3 pl) }
+              @(TENSE pres). 
+
+tenéis	   V * @(TRANS have)
+	      @(MOOD indicative) 
+              (^ VTYPE) = main
+              @(SUBJ-AGR 2 pl)
+              @(TENSE pres). 
+
+quiere 	  V * @(TRANS want)
+	      @(MOOD indicative)
+              (^ VTYPE) = main
+              @(SUBJ-AGR 3 sg)
+              @(TENSE pres). 
+
+
+Comé 	  V * @(OPT-TRANS eat)
+	      @(MOOD imperative)
+	      @(SUBJ-AGR 2 sg)
+              @(TENSE pres).
+
+Confia 	  V * @(OPT-TRANS trust)
+	      @(MOOD imperative)
+	      @(SUBJ-AGR 2 sg).
+              
+
+hablo     V *  @(OPT-TRANS can)
+		@(MOOD indicative)
+		(^VTYPE) = main
+		@(SUBJ-AGR 1 sg)
+		@(TENSE pres).
+
+
+ser 	  V * @(OPT-TRANS be)
+	      @(MOOD indicative)
+              (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+              @(TENSE pres).
+
+Vamos 	  V * @(TRANS-OBL go)
+	      @(MOOD indicative) 
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 1 pl)
+	      @(TENSE pres). 
+
+
+es	  V * @(TRANS is)
+	      @(MOOD indicative)
+              (^ VTYPE) = main
+	      @(SUBJ-AGR 2 sg)
+              @(TENSE pres).
+
+Querés	  V * @(OPT-TRANS want)		"argentinian dialect"
+	      @(MOOD indicative)
+              (^ VTYPE) = main
+	      @(SUBJ-AGR 2 sg)
+              @(TENSE pres).
+
+corren	  V * @(OPT-TRANS run)
+	      @(MOOD indicative) "i have to check this one"
+              (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+              @(TENSE pres).
+
+corrió 	  V * @(OPT-TRANS run)
+	      @(MOOD indicative) "i have to check this one"
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 sg)
+	      @(TENSE past).
+
+Hagamos	   V * @(TRANS do)
+	      @(MOOD imperative)
+	      (^ VTYPE) = main
+              @(SUBJ-AGR 1 pl)
+              @(TENSE pres). 
+
+son	   V * @(TRANS are) 
+	      @(MOOD indicative)
+	      (^ VTYPE) = main
+	      @(SUBJ-AGR 3 pl)
+	      @(TENSE pres). 
+
+
+"prepositions and prepositional phrases"
+
+en 	  P * { (^ PRED) = 'in<(^ OBJ)>'
+		@(PTYPE sem)
+		{ @(PSEM dir) (^ OBJ CASE) =c acc
+		| @(PSEM loc) (^ OBJ CASE) =c dat }
+	      | ~(^ PSEM)
+		@(PCASE in) 
+		@(PTYPE nosem)
+	      }. 
+		   
+		   
+del 	  P * (^ PRED) = 'of<(^ OBJ)>' "combination of the preposition 'de' "
+	      (^ DET) = 'the'		"and the definite determiner 'el'"
+	      @(PCASE of) 
+	      @(PTYPE sem).
+
+
+de 	  P *  (^ PRED) = 'of<(^ OBJ)>' "translation context dependent"
+    		@(PCASE of)               		 
+		@(PTYPE sem).
+
+
+al 	  P *  {(^ PRED) = 'to<(^ OBJ)>' "combination of the preposition 'a' "	
+		(^ DET) = 'the' 		"and the definite determiner 'el'"
+    		@(PTYPE sem)
+		 @(PSEM dir) (^ OBJ CASE) =c acc
+	
+	      | ~(^ PSEM)
+		@(PCASE to) 
+		@(PTYPE nosem)
+	      }. 
+
+	      
+"determiners"
+	      
+Unas 	  DET * @(SPEC det indef)
+		@(NUM pl) 
+		@(GEND fem).
+
+Unos 	  DET * @(SPEC det indef)
+		@(NUM pl) 
+		@(GEND masc).
+
+el 	  DET * @(SPEC the def)
+                @(NUM sg)
+		@(GEND masc).
+
+Los 	  DET * @(SPEC the def)
+		@(NUM pl) 
+		@(GEND masc).
+
+
+los 	  DET * @(SPEC the def)
+		@(NUM pl) 
+		@(GEND masc).
+
+un 	  DET * @(SPEC a indef)
+		@(NUM sg) 
+		@(GEND masc).
+
+Un 	  DET * @(SPEC a indef)
+		@(NUM sg) 
+		@(GEND masc).
+
+una 	  DET * @(SPEC a indef)
+		@(NUM sg) 
+		@(GEND fem).
+
+Una 	  DET * @(SPEC a indef)
+		@(NUM sg) 
+		@(GEND fem).
+
+
+la 	  DET * @(SPEC the def)
+		@(NUM sg) 
+		@(GEND fem).
+
+
+las 	  DET * @(SPEC the def)
+		@(NUM pl) 
+		@(GEND fem).
+
+
+Las 	  DET * @(SPEC the def)
+		@(NUM pl) 
+		@(GEND fem).
+
+
+"Adjective"
+
+
+contentos   ADJ * @(ADJ happy attributive) "we'll see if we keep the type of adj"
+		@(GEND masc)
+		@(NUM pl). 
+
+grandes   ADJ * @(ADJ big attributive)
+		{ @(GEND fem) | @(GEND masc)} 
+		@(NUM pl).
+		
+              
+violeta   ADJ * @(ADJ purple attributive)
+		{ @(GEND fem) | @(GEND masc)}
+		@(NUM sg).
+
+morada   ADJ * @(ADJ purple attributive)
+		@(GEND fem)
+		@(NUM sg).
+
+
+rico   ADJ * @(ADJ tasty attributive)
+		@(GEND masc)
+		@(NUM sg). 
+
+mejor 	  ADJ * @ (ADJ best superlative)
+	   	{ @(GEND fem) | @(GEND masc)}
+   	         @(NUM sg).
+
+
+amarilla  ADJ * @ (ADJ yellow attributive)
+	   	 @(GEND fem)
+   		 @(NUM sg).
+
+
+altos   ADJ * @(ADJ tall attributive)
+		@(GEND masc)
+		@(NUM pl). 
+
+
+libres   ADJ * @(ADJ free attributive)
+		{ @(GEND fem) | @(GEND masc)}
+		@(NUM pl). 
+
+esta     ADJ * @(ADJ this demonstrative)
+		@(GEND fem)
+		@(NUM sg).
+
+
+"adverbs"
+
+alegremente ADV * (^ PRED) = 'happily'.
+
+muy 	    ADV * (^ PRED) = 'very'.
+
+libremente ADV * (^ PRED) = 'freely'.
+
+
+
+"negation"
+
+no 	NEG*  (^NEG) = +.
+
+
+
+"functional words"
+
+que 	C * (^ COMP-FORM) = 'that'. 
+
+
+
+"puncutation"
+
+.	PERIOD * .
+
+,	COMMA * .
+
+
+?	INT * (^ STMT-TYPE) = interrogative.
+
+!	EXCL * (^ STMT-TYPE) = exclamation.
+
+----
