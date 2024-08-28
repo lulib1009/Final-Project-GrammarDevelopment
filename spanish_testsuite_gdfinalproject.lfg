@@ -1,6 +1,6 @@
 #TESTSUITE SPANISH
 
-#The English translation for each sentece in written above the parsable and unparsable senteces. 
+#The English translation for each sentece in written above the parsable and unparsable sentences. 
 
 # Sentences for adjective, determiner, noun agreement in gender and number agreement. Internal NP structure different position for adverbs and adjectives. 
 
@@ -40,8 +40,8 @@ Ustedes tienen una remera violeta.
 Vosotros tenéis una camiseta morada. 
 
 
-# Yes/no questions in argentinian dialect because the verb 'tener' is conjugated for the
-# pronoun 'vos'(argentinian), in Castillian Spanish from spain it would be 'tienes'.
+# Yes/no questions in argentinian dialect because the verb 'tener' is conjugated for the pronoun 'vos'(argentinian), 
+# in Castillian Spanish from spain it would be 'tienes'.
 
 # Have you got a yellow footbal t-shirt?
 
@@ -89,8 +89,7 @@ Pedro no quiere un alfajor.
 Yo no hablo español.
 
 
-# Imperatives including the 1st person plural which is not common in every language in the 
-# imperative mood. 
+# Imperatives including the 1st person plural which is not common in every language in the imperative mood. 
 
 #Eat the food! 
 
@@ -111,10 +110,8 @@ Yo no hablo español.
 
 # UNPARSABLE SENTENCES 
 
-# non-agreement between subject (noun) and adjective. Also, in this case the sentece
-# would be unparsable because of the position of the ajective, since even though, that
-# position after de verb is possible, it is not possible in this grammar because the rules 
-# do not allow it. 
+# non-agreement between subject (noun) and adjective. Also, in this case the sentece  would be unparsable because of the position of the ajective, 
+# since even though, that position after de verb is possible, it is not possible in this grammar because the rules do not allow it. 
 
 # The boys play happy at the school.
 
@@ -138,8 +135,7 @@ Una jirafas corren libres.
 
 Vos tienen una juntada esta tarde.
 
-#wrong Word order in subordinate clasues, the complementizer goes before the subordinate 
-# verb
+# Wrong word order in subordinate clasues, the complementizer goes before the subordinate verb.
 
 # Pedro said the girls that want a cookie.
 
@@ -153,17 +149,15 @@ Pedro dijo las niñas que quieren un alfajor.
 
 # verbal tense agreement
 
-# We era at the school.
+# We are at the school.
 
 Nosotros están en el colegio.
 
-# Negation word order, even though this word order in Spanish is possible, however, it is 
-# not possible in this grammar since the rules do not allow this.
+# Negation word order, even though this word order in Spanish is possible, however, it is not possible in this grammar since the rules do not allow this.
 
-#No you are free.
+#No you are free. (The order is exactly like the one in Spanish word order. The correct translation would be 'You are not free.')
 
 No son libres.
-
 
 # Yes/no questions additional verb complextion.
 
