@@ -4,7 +4,7 @@
    ### Nurten Atc , Buket Sak, Ludmila Bajuk
 
 # Overview
-
+When creating a grammar for the XLE parser, it was necessary to take into account a number of linguistic complications that are specific to the Spanish language. In order to ensure accurate parsing and the creation of various sentence kinds that accurately reflect the subtleties of Spanish, this endeavor required the precise implementation of rules and structures. The study concentrated on a number of significant linguistic phenomena, each of which presented particular difficulties and called for specially designed XLE framework solutions.
 
 
 # Why we choose these phenomena
