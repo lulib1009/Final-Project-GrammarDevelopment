@@ -21,8 +21,7 @@ Las jirafas son animales muy altos.
 Pedro quiere un rico alfajor. 
 
 
-# Senteces in Argentinian dialect and Castillian Spanish dialect. 
-# 'vos' is the Argentinian determiner for 'tu', and 'sos'the Argentinian conjugation for 
+# Senteces in Argentinian dialect and Castillian Spanish dialect. 'vos' is the Argentinian determiner for 'tu', and 'sos'the Argentinian conjugation for 
 # the verb 'ser' which in Castillian Spanish would be 'eres'.
 
 # You are the best student from the school
@@ -45,15 +44,15 @@ Vosotros tenéis una camiseta morada.
 
 # Have you got a yellow footbal t-shirt?
 
-¿Tenés una remera amarilla de fútbol?
+Tenés una remera amarilla de fútbol?
 
 #Let's go to the park?
 
-¿Vamos al parque?
+Vamos al parque?
 
 #Do you want a cookie?
 
-¿Querés un alfajor?
+Querés un alfajor?
 
 
 # Subordinate sentences with the complementizer 'que' (that or which).
@@ -93,19 +92,19 @@ Yo no hablo español.
 
 #Eat the food! 
 
-¡Comé la comida!
+Comé la comida!
 
 # Trust me! Imperative with 'en' non-sem.
 
-¡Confia en mi! 
+Confia en mi! 
 
 # Trust the student!
 
-¡Confia en la alumna! 
+Confia en la alumna! 
 
 # Let's do a gathering this afternook! Imperative with 1st person plural.
 
-¡Hagamos una juntada esta tarde! 
+Hagamos una juntada esta tarde! 
 
 
 # UNPARSABLE SENTENCES 
@@ -145,7 +144,7 @@ Pedro dijo las niñas que quieren un alfajor.
 
 # You eat the food!
 
-¡Tú come la comida!
+Tú come la comida!
 
 # verbal tense agreement
 
@@ -163,11 +162,11 @@ No son libres.
 
 #Do you want to go to the park?
 
-¿Querés ir al parque?
+Querés ir al parque?
 
 # Wrong word order in yes/no questions, that is allowed in Spanish, but not in this grammar.
 
-¿Al parque, querés ir?
+Al parque, querés ir?
 
 
 
